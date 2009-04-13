@@ -1,0 +1,14 @@
+dtis = test_eg_dtiset;
+bzs = bzeros(dtis);
+assert_equal(closer_than(bzeros(dtis), bzs), [1 1]);
+assert_equal(closer_than(bzeros(dtis), bzs(1)), [1 1]);
+assert_equal(closer_than(dtis, dtis), ones(size(dtis)));
+assert_equal(closer_than(dtis, dtis(1)), [1 0 0 1 0 0]);
+assert_equal(closer_than(dtis, dtis(2)), [0 1 0 0 1 0]);
+assert_equal(closer_than(dtis, dtis(3)), [0 0 1 0 0 1]);
+[fs fis] = find_similar(dtis, dtis(1));
+assert_equal(fis, [1 4]);
+[fs fis] = find_similar(dtis, dtis(2));
+assert_equal(fis, [2 5]);
+[fs fis] = find_similar(dtis, dtis(3));
+assert_equal(fis, [3 6]);

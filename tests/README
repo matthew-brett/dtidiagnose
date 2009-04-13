@@ -1,0 +1,13 @@
+To run the tests in this directory, you will need the testing framework
+
+>> addpath /path/to/testing_framwork
+
+Run individual tests with:
+
+>> cd tests
+>> test_my_test
+
+Run all tests with:
+
+>> run_tests('/path/to/tests/directory')
+
